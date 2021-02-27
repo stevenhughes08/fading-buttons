@@ -1,16 +1,10 @@
-var controller = new ScrollMagic.Controller();
+var ctrl = new ScrollMagic.Controller();
+var $s = document.querySelector('div#buttons').first();
 
-var pinIntroScene = new ScrollMagic.Scene({
-        triggerElement: '.trigger',
-        triggerHook: 0.2,
-        duration: '150%'
-    })
-    .setPin('.trigger')
-    .addTo(controller);
-
-//GSap animation
-var scene = new ScrollMagic.Scene({
-    triggerElement: ".trigger"
-})
-
-.setTween('#buttons', 1, { opacity: 0 }).addIndicators({ name: '1 (duration: 0)' }).addTo(controller);
+$s.style.opacity = 0;
+var scene1 = new ScrollMagic.Scene({
+    offset: 10,
+    duration: 50
+}).addEventListener('enter leave', function(e) {
+    TweenMax.to($s, 0.2, { opacity: e.type === 'enter' ? 1 : 0 });
+}).addTo(ctrl).addIndicators();
