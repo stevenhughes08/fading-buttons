@@ -1,0 +1,24 @@
+body {
+    height: 200vh;
+}
+
+.trigger {
+    position: absolute;
+    top: 50vh;
+    color: red;
+}
+
+#buttons {
+    width: 100vw;
+    flex-direction: row;
+    margin-left: 25%;
+    position: absolute;
+    top: 75vh;
+    .btn {
+        justify-content: center;
+        border: 5px darken(green, 10%) dotted;
+        border-radius: 20px;
+        flex-direction: column;
+        background-color: green;
+    }
+}
