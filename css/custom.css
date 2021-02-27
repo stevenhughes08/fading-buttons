@@ -3,7 +3,7 @@ body {
 }
 
 .trigger {
-  position: absolute;
+  position: fixed;
   top: 50vh;
   color: red;
 }
